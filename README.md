@@ -4,3 +4,24 @@ This version forks from the py-faster-rcnn(the rbg's code), and modify some file
 
 Requirement or Environment: 
 ubuntu 16.04 only cpu, opencv3.3, python2.7, cmake3.8.
+
+
+Modify list:
+1. Makefile.config 
+1)cp Makefile.config.example Makefile.config
+2)modify the Makefile.config as followed;
+ CPU_ONLY := 1
+ OPENCV_VERSION := 3
+ WITH_PYTHON_LAYER := 1
+ INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /usr/include/hdf5/serial
+ LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib /usr/lib/i386-linux-gnu/hdf5/serial /usr/lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu/hdf5/serial
+
+2.cd $FRCN_ROOT/lib
+  make
+3.cd $RFRCN_ROOT/caffe-faster-rcnn
+  make -j8 && make pycaffe
+4. cd $FRCN_ROOT
+  ./data/scripts/fetch_faster_rcnn_models.sh
+5. cd $FRCN_ROOT
+   ./tools.demo.py
+
