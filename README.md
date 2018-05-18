@@ -25,3 +25,6 @@ Modify list:
 5. cd $FRCN_ROOT
    ./tools.demo.py
 
+
+ the model and the dataset can be downloaded from here.
+链接: https://pan.baidu.com/s/1tNRFuK_IQkyfi4AhaO3waw 密码: 4fe1
